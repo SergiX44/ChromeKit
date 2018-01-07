@@ -44,24 +44,14 @@ class ChromeKit
     /** @var string */
     protected $outputPath;
 
-
     /**
-     * ChromeKit constructor.
-     * @throws Exceptions\UnsupportedEnvironment
+     * @param string $path
+     * @return $this
      */
-    public function __construct()
+    public function chromePath(string $path)
     {
-        $this->chromeExecutablePath = FindChrome::forThisOS();
-    }
-
-	/**
-	 * @param string $path
-	 * @return $this
-	 */
-	public function chromePath(string $path)
-    {
-    	$this->chromeExecutablePath = $path;
-    	return $this;
+        $this->chromeExecutablePath = $path;
+        return $this;
     }
 
     /**
@@ -160,6 +150,7 @@ class ChromeKit
 
     /**
      * @return string
+     * @throws Exceptions\UnsupportedEnvironment
      */
     public function html()
     {
@@ -173,6 +164,7 @@ class ChromeKit
     /**
      * @param string $path
      * @return bool
+     * @throws Exceptions\UnsupportedEnvironment
      */
     public function save(string $path)
     {
@@ -186,10 +178,11 @@ class ChromeKit
 
     /**
      * @return array
+     * @throws Exceptions\UnsupportedEnvironment
      */
     protected function buildArgs()
     {
-        $args = [$this->chromeExecutablePath, '--headless'];
+        $args = [$this->chromeExecutablePath !== null ? $this->chromeExecutablePath : FindChrome::forThisOS(), '--headless'];
 
         if (!$this->gpuEnabled) {
             $args[] = '--disable-gpu';
