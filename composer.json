@@ -1,0 +1,33 @@
+{
+    "name": "sergix44/chromekit",
+    "type": "library",
+    "description": "A PHP wrapper over Chrome headless browser",
+    "keywords": [
+        "chrome",
+        "headless",
+        "library"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergio Brighenti",
+            "email": "sergio@brighenti.me"
+        }
+    ],
+    "require": {
+        "symfony/process": "^3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SergiX44\\ChromeKit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SergiX44\\ChromeKit\\Test\\": "tests"
+        }
+    }
+}
