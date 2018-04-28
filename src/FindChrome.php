@@ -14,9 +14,14 @@ class FindChrome
             '/Applications/Chromium.app/Contents/MacOS/Chromium',
         ],
         'Linux' => [
+            '/opt/google/chrome/chrome',
             '/usr/bin/google-chrome',
             '/usr/bin/chromium',
         ],
+	    'WINNT' => [
+	    	'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe',
+	    	'C:\Program Files\Google\Chrome\Application\chrome.exe',
+	    ]
     ];
 
     /**
