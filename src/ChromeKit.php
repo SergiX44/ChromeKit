@@ -137,7 +137,7 @@ class ChromeKit
 	 */
 	public function pdf(): ChromeKit
 	{
-		$this->action = self::ACTION_SCREENSHOT;
+		$this->action = self::ACTION_PDF;
 		return $this;
 	}
 
