@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "symfony/process": "^3.4"
+        "symfony/process": "^4.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5"

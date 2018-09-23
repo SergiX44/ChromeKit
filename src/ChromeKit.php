@@ -50,7 +50,7 @@ class ChromeKit
 	 * @param string $path
 	 * @return $this
 	 */
-	public function chromePath(string $path): ChromeKit
+	public function chromePath(?string $path): ChromeKit
 	{
 		$this->chromeExecutablePath = $path;
 		return $this;
@@ -174,18 +174,6 @@ class ChromeKit
 		$this->outputPath = realpath(dirname($path)) . '/' . basename($path);
 
 		return $this->run($this->buildArgs());
-	}
-
-	/**
-	 * @return ChromeScraper
-	 * @throws Exceptions\UnsupportedEnvironment
-	 */
-	public function scraper(): ChromeScraper
-	{
-		$this->action = self::ACTION_REPL;
-
-
-		return new ChromeScraper($this->buildArgs());
 	}
 
 	/**
